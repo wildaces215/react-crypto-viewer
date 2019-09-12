@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import "./App.css";
+import { BrowserRouter, Route } from "react-router-dom";
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/styles";
+
+const theme = new createMuiTheme({
+  palette: {
+    primary: { main: "#202040" },
+    secondary: { main: "#202060" }
+  }
+});
+//https://colorhunt.co/palette/156620
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
+          <Route path="/" component={Home}></Route>
+        </div>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
