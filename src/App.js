@@ -11,14 +11,21 @@ const theme = new createMuiTheme({
   palette: {
     primary: { main: "#202040" },
     secondary: { main: "#202060" }
+  },
+  table: {
+    backgroundColor: "#dfdfbf"
   }
 });
+
 //https://colorhunt.co/palette/156620
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <div className="App">
+        <div
+          className="App"
+          style={{ backgroundColor: "#282850", height: "100vh" }}
+        >
           <Navbar />
           <Route path="/" component={Home}></Route>
         </div>
