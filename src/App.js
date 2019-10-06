@@ -24,7 +24,7 @@ function App() {
       <BrowserRouter>
         <div
           className="App"
-          style={{ backgroundColor: "#282850", height: "100vh" }}
+          style={{ backgroundColor: "#282850", height: "0vh" }}
         >
           <Navbar />
           <Route path="/" component={Home}></Route>
